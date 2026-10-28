@@ -1,7 +1,6 @@
+#!/bin/bash
 
+# $1 es la palabra a buscar y $2 es la carpeta donde buscar.
+echo "Buscando $1 en la carpeta $2"
 
-# Buscar la palabra home en los archivos de la carpeta archivos.
-echo "Archivos que contienen la palabra home:"
-
-# -l muestra el nombre del archivo y -w busca la palabra completa.
-grep -l -w "home" archivos/*.txt
+grep -l -w "$1" "$2"/*.txt

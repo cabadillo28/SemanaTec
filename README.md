@@ -1,10 +1,12 @@
 # SemanaTec
 
-Busca la palabra `home` en los archivos `.txt` de la carpeta `archivos`.
+Busca una palabra en los archivos `.txt` de una carpeta.
 
 ```bash
-bash buscar_home.sh
+bash buscar_home.sh home archivos
 ```
+
+El primer dato es la palabra y el segundo es la carpeta.
 
 ## Integrantes
 
