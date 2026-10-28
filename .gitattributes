@@ -1,0 +1,6 @@
+# Los scripts de shell siempre con LF, aunque se clonen en Windows.
+*.sh text eol=lf
+
+# Textos y documentación con los saltos de línea nativos.
+*.md text
+*.txt text

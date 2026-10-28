@@ -1,6 +1,21 @@
 #!/bin/bash
 
-# $1 es la palabra a buscar y $2 es la carpeta donde buscar.
-echo "Buscando $1 en la carpeta $2"
+# Uso: bash buscar_home.sh <palabra> <carpeta>
+if [ $# -lt 2 ]; then
+    echo "Uso: bash buscar_home.sh <palabra> <carpeta>"
+    exit 1
+fi
 
-grep -l -w "$1" "$2"/*.txt
+palabra="$1"
+carpeta="$2"
+
+if [ ! -d "$carpeta" ]; then
+    echo "La carpeta '$carpeta' no existe."
+    exit 1
+fi
+
+echo "Buscando '$palabra' en la carpeta '$carpeta'"
+
+# -r busca en subcarpetas, -l muestra solo el nombre del archivo,
+# -w busca la palabra completa y --include limita a los .txt
+grep -r -l -w --include='*.txt' -- "$palabra" "$carpeta"
